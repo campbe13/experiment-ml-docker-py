@@ -1,0 +1,2 @@
+via Win pro needed -m
+py  -m pip install -U scikit-learn 

@@ -1,0 +1,16 @@
+ml for AI cop presentation
+
+https://medium.com/towards-data-analytics/a-simple-machine-learning-python-program-bf5d156d2cda   f(x,y,z) = x +2y +3z 
+
+
+https://towardsdatascience.com/simple-machine-learning-model-in-python-in-5-lines-of-code-fe03d72e78c6  (same as above, has the temperature example
+
+show ^^^ incorrectly trained ??  wrong value for x +2y +3x 
+
+
+https://python.plainenglish.io/machine-learning-in-laymans-terms-linear-regression-with-groceries-6a595d1242d
+
+
+https://hackernoon.com/the-simplest-explanation-of-machine-learning-youll-ever-read-bebc0700047c
+
+https://machinelearningmastery.com/machine-learning-in-python-step-by-step/
