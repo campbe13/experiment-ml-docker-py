@@ -1,8 +1,9 @@
 '''
-simple example using Linear Regression to estimate the values for
-f(x,y,z)  = x + 2y + 3z
+simple example using Linear Regression to determine 
+when to wear a coat 
+
 p.campbell
-2022-01-06
+2022-01-010
 
 refs
 https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
@@ -18,34 +19,31 @@ from random import randint
 LIMIT = 1000  # max for x, y, z
 COUNT = 100   # number of values in the training set
 
-# input values x, y, z of  f(x,y,z)  
+TRAIN_SET = [  [ [27,0], "no coat"], [[21,0], "no coat"], [[15,0], "no coat"], 
+               [[7,0], "coat"], [[5,0], "coat"], [[-5,0], "coat"]]
 TRAIN_INPUT = list()
-# the result of f(x,y,z)
 TRAIN_RESULT = list()
-for i in range(COUNT):
-    # generate random numbers
-    x = randint(0, LIMIT)
-    y = randint(0, LIMIT)
-    z = randint(0, LIMIT)
-    TRAIN_INPUT.append([x, y, z])
-    # result of the algebraeic function
-    result = x + (2*y) + (3*z)
-    TRAIN_RESULT.append(result)
+for data in TRAIN_SET:
+    print(data[0])
+    print(data[1])
+    TRAIN_INPUT.append([data[0]])
+    if data[1] == 'coat': 
+        TRAIN_RESULT.append(1)
+    else:
+        TRAIN_RESULT.append(0)
 '''
 create the fitted estimator, using the training data
 fit the model to the data   (train it)
 features: x, target: y
 '''
 model = LinearRegression(n_jobs=-1).fit(X=TRAIN_INPUT, y=TRAIN_RESULT) 
-print("model coefficients {}  ".format(model.coef_))
+#print("model coefficients {}  ".format(model.coef_))
 print("model params {} ".format(model.get_params()))
 
 # Now use the model
-# test set  f(5, 6, 10)  (result should be 5+12+30 or 47)
-test = [[ 5, 6, 10 ]]
-'''
+test = 10
+
 estimate = model.predict(X=test)
-# resul
 print("Result {} ".format(estimate))
 '''
 print("using the model:")
@@ -55,3 +53,4 @@ result =  predict([[10, 10, 10]], model)
 print("result: {} from x,y,z values  {}".format(result[0], [[10,10,10]]))
 result =  predict([[3, 2, 1]], model)
 print("result: {} from x,y,z values  {}".format(result[0], [[3,2,1]]))
+'''
