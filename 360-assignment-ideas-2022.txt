@@ -1,0 +1,23 @@
+http://nevillewadia.com/wp-content/uploads/2021/04/Python-and-ML-MCQ.pdf
+https://quizlet.com/449244318/chapter-5-quiz-flash-cards/
+https://quizlet.com/422611685/assessment-1-quiz-flash-cards/ 
+https://dev.to/mikecase/python-development-environment-in-a-docker-container-4hg8
+
+
+
+https://yannmjl.medium.com/what-is-machine-learning-in-simple-english-b0aaa251cb60?p=ae6a82d98dbb  
+https://code.visualstudio.com/docs/containers/quickstart-python
+
+https://towardsdatascience.com/recommending-books-from-project-gutenberg-a7222c945ebd 
+
+2022-01-06
+https://scikit-learn.org/stable/install.html
+laptop: installed python
+
+pip install pandas
+pip install -U scikit-learn
+In order to check your installation you can use
+
+python -m pip show scikit-learn  # to see which version and where scikit-learn is installed
+python -m pip freeze  # to see all packages installed in the active virtualenv
+python -c "import sklearn; sklearn.show_versions()"
