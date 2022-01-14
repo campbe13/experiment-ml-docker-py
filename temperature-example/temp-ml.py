@@ -1,56 +1,54 @@
 '''
-simple example using Linear Regression to determine 
+simple example using Classification to determine 
 when to wear a coat 
 
 p.campbell
-2022-01-010
+2022-01-13
 
 refs
-https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html
-https://www.tutorialspoint.com/scikit_learn/scikit_learn_estimator_api.htm
+https://towardsdatascience.com/a-beginners-guide-to-text-classification-with-scikit-learn-632357e16f3a
 '''
 
-def predict(test, model) :
-    return model.predict(X=test)
-    
-from sklearn.linear_model import LinearRegression
+import pandas
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler 
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.metrics import classification_report, confusion_matrix
 
-from random import randint
-LIMIT = 1000  # max for x, y, z
-COUNT = 100   # number of values in the training set
+cols = ['temperature', "wear coat"]
+data = pandas.read_csv(r'temp-coat.csv',names=cols)
+data.head()
+X = data.iloc[:, :-1].values
+y = data.iloc[:, 1].values
 
-TRAIN_SET = [  [ [27,0], "no coat"], [[21,0], "no coat"], [[15,0], "no coat"], 
-               [[7,0], "coat"], [[5,0], "coat"], [[-5,0], "coat"]]
-TRAIN_INPUT = list()
-TRAIN_RESULT = list()
-for data in TRAIN_SET:
-    print(data[0])
-    print(data[1])
-    TRAIN_INPUT.append([data[0]])
-    if data[1] == 'coat': 
-        TRAIN_RESULT.append(1)
-    else:
-        TRAIN_RESULT.append(0)
-'''
-create the fitted estimator, using the training data
-fit the model to the data   (train it)
-features: x, target: y
-'''
-model = LinearRegression(n_jobs=-1).fit(X=TRAIN_INPUT, y=TRAIN_RESULT) 
-#print("model coefficients {}  ".format(model.coef_))
-print("model params {} ".format(model.get_params()))
+print("X ",X)
+print("y ",y)
 
-# Now use the model
-test = 10
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20) 
+scaler = StandardScaler()
+scaler.fit(X_train)
 
-estimate = model.predict(X=test)
-print("Result {} ".format(estimate))
-'''
-print("using the model:")
-result =  predict(test, model)
-print("result: {} from x,y,z values  {}".format(result[0], test))
-result =  predict([[10, 10, 10]], model)
-print("result: {} from x,y,z values  {}".format(result[0], [[10,10,10]]))
-result =  predict([[3, 2, 1]], model)
-print("result: {} from x,y,z values  {}".format(result[0], [[3,2,1]]))
-'''
+X_train = scaler.transform(X_train)
+X_test = scaler.transform(X_test) 
+
+# Use the KNN classifier to fit data:
+classifier = KNeighborsClassifier(n_neighbors=2)
+classifier.fit(X_train, y_train) 
+
+# Predict y data with classifier: 
+y_predict = classifier.predict(X_test)
+print ("given ",X_test)
+print ("predict ",y_predict)
+#test2 = [[25,4, -20, 14]]
+# note it will predict none for 4 degrees, training set is insufficient
+test2 = [[35], [-4], [4]]
+print ("given ", test2 )
+print ("predict ", classifier.predict(test2))
+test2 = [[-25]]
+print ("given ", test2 )
+print ("predict ", classifier.predict(test2))
+
+# Print results: 
+
+print("confusion matrix", confusion_matrix(y_test, y_predict))
+print("classification report\n", classification_report(y_test, y_predict)) 
