@@ -5,8 +5,11 @@ when to wear a coat
 p.campbell
 2022-01-13
 
+TODO: use inline data instead of CSV makes it more obvious
+
 refs
 https://towardsdatascience.com/a-beginners-guide-to-text-classification-with-scikit-learn-632357e16f3a
+https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html
 '''
 
 import pandas
