@@ -50,7 +50,7 @@ print("Result {} ".format(estimate))
 '''
 print("using the model:")
 result =  predict(test, model)
-print("result: {} from x,y,z values  {}".format(result[0], test))
+print("result: {} from x,y,z values  {} ".format(result[0], test))
 result =  predict([[10, 10, 10]], model)
 print("result: {} from x,y,z values  {}".format(result[0], [[10,10,10]]))
 result =  predict([[3, 2, 1]], model)

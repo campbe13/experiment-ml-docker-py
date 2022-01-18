@@ -7,7 +7,7 @@ p.campbell
 
 this: use csv data
 TODO: use inline data instead of CSV makes it more obvious
-TODO: generate a larger dataset 100x random 11-35 & 10 to -30 (precision 2 decimals)
+see other: generate a larger dataset 100x random 11-35 & 10 to -30 (precision 2 decimals)
 refs
 https://towardsdatascience.com/a-beginners-guide-to-text-classification-with-scikit-learn-632357e16f3a
 https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html

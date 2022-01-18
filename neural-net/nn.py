@@ -7,7 +7,7 @@ ref https://towardsdatascience.com/inroduction-to-neural-networks-in-python-7e0b
 
 import numpy as np # helps with the math
 import matplotlib.pyplot as plt # to plot error during training
-
+# training data, expected input & parallel expected output
 # input data
 inputs = np.array([[0, 1, 0],
                    [0, 1, 1],
@@ -74,9 +74,9 @@ example3 = np.array([[1, 1, 1]])
 example4 = np.array([[0, 0, 0]])
 
 # print the predictions for both examples                                   
-print(NN.predict(example), example, ' - Correct: ', example[0][0])
-print(NN.predict(example2), example2, ' - Correct: ', example2[0][0])
-print(NN.predict(example3), example3, ' - Correct: ', example3[0][0])
+print("prediction: ", NN.predict(example), example, ' - Correct: ', example[0][0])
+print("prediction: ", NN.predict(example2), example2, ' - Correct: ', example2[0][0])
+print("prediction: ", NN.predict(example3), example3, ' - Correct: ', example3[0][0])
 print(NN.predict(example4), example4, ' - Correct: ', example4[0][0])
 
 # plot the error over the entire training duration

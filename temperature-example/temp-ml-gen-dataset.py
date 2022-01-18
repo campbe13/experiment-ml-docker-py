@@ -73,5 +73,9 @@ for i in range(30):
         print(f'When it\'s  {test2[0][0]} wear  {result[0]}')
 
 # Print results: 
+'''
+confusion matrix: s a summarized table of the number of correct and incorrect predictions (or actual and predicted values) yielded by a classifier (or classification model) for binary classification tasks. 
+
+'''
 #print("confusion matrix", confusion_matrix(y_test, y_predict))
 #print("classification report\n", classification_report(y_test, y_predict)) 
