@@ -3,7 +3,6 @@ ssimple example using plain old python to determine
 when to wear a coat 
 
 
-
 p.campbell
 2022-01-13
 
