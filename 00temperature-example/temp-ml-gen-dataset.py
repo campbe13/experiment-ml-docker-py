@@ -24,19 +24,22 @@ X = list()
 y = list()
 # 100 >=10
 for i in range(5000):
-    # random float 2 decimal points
-    z = round(random.uniform(10.0, 35.0), 3)
+    # random float 3 decimal points
+    z = round(random.uniform(11.0, 35.0), 3)
     X.append([z])
     y.append('none')
+#print('X',X)
 # 100 <10
 for i in range(5000):
-    # random float 2 decimal points
-    z = round(random.uniform(9.99, -35.0), 3)
+    # random float 3 decimal points
+    z = round(random.uniform(10.99, -35.0), 3)
     X.append([z])
     y.append('coat')
+    
 for i in range(0,9):
     X.append([i])
     y.append('coat')
+    
 #print("X ",X)
 #print("y ",y)
 
@@ -57,13 +60,16 @@ print ("given ",X_test)
 print ("predict ",y_predict)
 #test2 = [[25,4, -20, 14]]
 # note it will predict none for 4 degrees, training set is insufficient
-test2 = [[35], [-4], [4]]
+test2 = [[35], [-4], [14]]
 print ("given ", test2 )
 print ("predict ", classifier.predict(test2))
 test2 = [[-25]]
 print ("given ", test2 )
 print ("predict ", classifier.predict(test2))
-for i in range(30):
+test2 = [[4]]   # weird zone
+print ("given ", test2 )
+print ("predict ", classifier.predict(test2))
+for i in range(15):
     test2 = [[round(random.uniform(-35.0, 35.0), 3)]]
     result = classifier.predict(test2)
     #print ("given ", test2, " predict ", result) 

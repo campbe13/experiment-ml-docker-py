@@ -37,8 +37,8 @@ fit the model to the data   (train it)
 features: x, target: y
 '''
 model = LinearRegression(n_jobs=-1).fit(X=TRAIN_INPUT, y=TRAIN_RESULT) 
-print("model coefficients {}  ".format(model.coef_))
-print("model params {} ".format(model.get_params()))
+#print("model coefficients {}  ".format(model.coef_))
+#print("model params {} ".format(model.get_params()))
 
 # Now use the model
 # test set  f(5, 6, 10)  (result should be 5+12+30 or 47)
