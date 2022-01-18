@@ -9,6 +9,7 @@ import numpy as np # helps with the math
 import matplotlib.pyplot as plt # to plot error during training
 # training data, expected input & parallel expected output
 # input data
+# note this is very simple (if 1st elem of array is = 0, result is = 0)
 inputs = np.array([[0, 1, 0],
                    [0, 1, 1],
                    [0, 0, 0],
